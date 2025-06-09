@@ -1,0 +1,206 @@
+:root {
+  --bg: #151722;
+  --card: #23263a;
+  --accent: #5a7fff;
+  --accent2: #a7bfff;
+  --text: #e1e6f7;
+  --muted: #b3b7ca;
+  --border: #23263a;
+  --input: #171a28;
+  --shadow: 0 2px 12px 0 rgba(32,44,83,0.13);
+  --radius: 16px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-bottom: 130px;
+}
+
+header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent2);
+}
+header .accent { color: var(--accent); }
+header .subtitle {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+.vouch-count {
+  display: inline-block;
+  background: #23263a;
+  color: var(--accent);
+  padding: 6px 22px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 8px;
+  box-shadow: var(--shadow);
+}
+
+main {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.vouch-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 30px 24px 30px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  min-height: 90px;
+  transition: transform 0.08s;
+}
+.vouch-card:hover { transform: translateY(-2px) scale(1.01); }
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  background: var(--accent2);
+  color: var(--card);
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px 0 rgba(90,127,255,0.16);
+}
+
+.vouch-content {
+  flex: 1;
+}
+
+.vouch-username {
+  font-weight: 600;
+  font-size: 1.17rem;
+  color: var(--text);
+}
+.vouch-date {
+  font-size: 0.96rem;
+  color: var(--muted);
+  margin-left: 10px;
+  font-weight: 400;
+}
+.vouch-text {
+  margin-top: 8px;
+  font-size: 1.07rem;
+  color: var(--muted);
+  word-break: break-word;
+}
+
+.vouch-number {
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.02rem;
+  padding: 3px 13px;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+#vouch-form {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background: var(--card);
+  border-top: 1px solid #202336;
+  box-shadow: 0 -2px 14px 0 rgba(32,44,83,0.10);
+  padding: 22px 0 18px 0;
+  z-index: 999;
+}
+
+.form-row {
+  display: flex;
+  gap: 18px;
+  align-items: end;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.form-group label {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 3px;
+  font-weight: 500;
+  margin-left: 4px;
+}
+.form-group input {
+  background: var(--input);
+  color: var(--text);
+  border: 1px solid #23263a;
+  border-radius: 7px;
+  padding: 10px 14px;
+  font-size: 1.09rem;
+  outline: none;
+  transition: border 0.18s;
+}
+.form-group input:focus {
+  border: 1.5px solid var(--accent);
+}
+
+#vouch-form button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 11px 34px;
+  font-size: 1.11rem;
+  border-radius: 7px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 19px;
+  transition: background 0.13s;
+  box-shadow: 0 2px 10px 0 rgba(90,127,255,0.09);
+}
+#vouch-form button:hover {
+  background: #749bff;
+}
+
+@media (max-width: 640px) {
+  .container {
+    max-width: 98vw;
+    padding: 0 2vw 90px 2vw;
+  }
+  main { margin-top: 28px; }
+  .vouch-card { padding: 22px 10px 18px 10px; }
+  .form-row { flex-direction: column; gap: 9px; }
+  #vouch-form { padding: 12px 0 12px 0; }
+  #vouch-form button { width: 100%; margin-top: 7px; }
+}
